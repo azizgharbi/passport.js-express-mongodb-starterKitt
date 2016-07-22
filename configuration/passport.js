@@ -16,6 +16,7 @@ module.exports = function(passport) {
 		});
 	});
 
+// Signup Strategy
 
 	passport.use('local-signup', new LocalStrategy({
 		usernameField: 'email',
@@ -32,7 +33,7 @@ module.exports = function(passport) {
 				} else {
 					var newUser = new User();
 					newUser.email = email;
-					newUser.password = password;
+					newUser.password = newUser.generateHash(password);
 
 					newUser.save(function(err){
 						if(err)
@@ -44,7 +45,7 @@ module.exports = function(passport) {
 
 		});
 	}));
-
+//Login Strategy
 	passport.use('local-login', new LocalStrategy({
 			usernameField: 'email',
 			passwordField: 'password',
@@ -57,7 +58,7 @@ module.exports = function(passport) {
 						return done(err);
 					if(!user)
 						return done(null, false, req.flash('loginMessage', 'No User found'));
-					if(user.password != password){
+					if(!user.validPassword(password)){
 						return done(null, false, req.flash('loginMessage', 'inavalid password'));
 					}
 					return done(null, user);
