@@ -1,0 +1,24 @@
+{
+  "name": "aziz-start-kit",
+  "version": "1.0.0",
+  "description": "nodejs express mongodb start-kit with promise Mongoose Exemple",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gharbi mohamed aziz",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.0",
+    "body-parser": "^1.15.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.0",
+    "mongoose": "^4.4.20",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
