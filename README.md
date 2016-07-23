@@ -1,4 +1,6 @@
-
+##description
+This is a starter kit for nodejs: express Mongodb includes
+a CRUD example and a user authentication + facebook  authentication with passport.js
 ## required
 Node js and Mongodb
 ## installation :
