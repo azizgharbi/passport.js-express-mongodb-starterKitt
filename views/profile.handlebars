@@ -13,8 +13,13 @@
 			<div class="well">
 					<p>
 						<strong>id</strong>: {{user._id }}<br>
-						<strong>email</strong>: {{user.name }}<br>
-						<strong>password</strong>: {{user.password}}
+             {{#if user.facebook.id}}
+						 <strong>Your facebook name</strong>: {{user.facebook.name }}<br>
+ 						<strong>Your Facebook id </strong>: {{user.facebook.id}}<br>
+						{{else}}
+						<strong>Name</strong>: {{user.name }}<br>
+						<strong>E-mail</strong>: {{user.email}}<br>
+						{{/if}}
 					</p>
 
 			</div>

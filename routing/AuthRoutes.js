@@ -41,6 +41,12 @@ module.exports = function(app, passport){
 		res.send("Success!");
 	});
 
+	app.get('/auth/facebook', passport.authenticate('facebook'));
+
+	app.get('/auth/facebook/login',
+	  passport.authenticate('facebook', { successRedirect: '/profile',
+	                                      failureRedirect: '/login' }));
+
 	app.get('/logout', function(req, res){
 		req.logout();
 		res.redirect('/');
