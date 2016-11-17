@@ -20,7 +20,12 @@
         <td>{{_id}}</td>
         <td>{{name}}</td>
         <td>{{email}}</td>
-        <td><a href="/{{_id}}">Delete</a></td>
+        <td>
+          <form method="post" action="/pow/{{_id}}?_method=DELETE" class="form-inline">
+                     <button type="submit" class="btn btn-default">Delete</button>
+                </form>
+
+        </td>
 
       </tr>
       {{/each}}

@@ -56,15 +56,12 @@ CreateUserPromise:function(req,res){
        });
 },
 // deleteUser
-DeleteUserPromise:function(req,res){
- var param=req.params.id;
-  User.findOneAndRemove(param)
-    .then(function(user){
-       res.redirect("/");
-       })
-    .catch(function(err){
-       console.log(err);
-       });
+destroy:function(req,res){
+  var query = {"_id": req.params.id};
+  User.findOneAndRemove(query, function(err, user){
+    console.log(user)
+    res.redirect('/');
+  });
 },
 
 //create function Simple exemple

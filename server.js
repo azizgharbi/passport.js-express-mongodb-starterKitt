@@ -8,7 +8,8 @@ mongoose.Promise=require('bluebird');
 // packge imported
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 var exphbs  = require('express-handlebars');
 var passport = require('passport');
 var flash = require('connect-flash');
@@ -27,6 +28,7 @@ require('./configuration/passport')(passport);
 //body-parser & cookieParser
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(methodOverride('_method'))
 // set engine handlebars
 app.engine('handlebars', exphbs({defaultLayout: 'default'}));
 app.set('view engine', 'handlebars');
